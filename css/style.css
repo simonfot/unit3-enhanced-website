@@ -1,0 +1,117 @@
+:root {
+    --primary: #ffd62e;
+    --dark: #222;
+    --light: #fff;
+    --theme-color: var(--primary);
+    --text-color: var(--dark);
+    --bg-color: var(--light);
+    --sidebar-width: 240px;
+    --header-height: 60px;
+    --border-radius: 12px;
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --z-sidebar: 40;
+    --z-header: 50;
+    --z-dropdown: 60;
+    --z-spatial-map: 70;
+    --z-modal: 80;
+    --content-padding: 24px;
+    --gap-sm: 8px;
+    --gap-md: 16px;
+    --gap-lg: 24px;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    transition: background-color var(--transition-medium);
+}
+
+button, input {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --text-color: var(--light);
+    --bg-color: var(--dark);
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--content-padding);
+    z-index: var(--z-header);
+    background-color: var(--bg-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-medium);
+}
+
+body.dark-mode header {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Logo Styles */
+.logo-container {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    margin-right: 40px;
+    user-select: none;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    letter-spacing: 1px;
+}
+
+.logo-number {
+    margin-left: 1px;
+    display: inline-block;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.logo-number.rotating {
+    transform: rotate(360deg);
+}
+
+/* Header Navigation */
+.header-nav {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+}
