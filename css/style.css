@@ -324,3 +324,136 @@ body.dark-mode .sidebar {
     display: flex;
     align-items: center;
 }
+
+/* Content Area */
+.content-area {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    padding: var(--content-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: minmax(240px, auto);
+    gap: var(--gap-md);
+    transition: all var(--transition-medium);
+    overscroll-behavior: contain;
+}
+
+.content-area.fullwidth {
+    grid-template-columns: 1fr;
+}
+
+/* Section Styles */
+.section {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-medium);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.section:hover {
+    box-shadow: var(--shadow-md);
+}
+
+body.dark-mode .section {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.section-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    user-select: none;
+}
+
+body.dark-mode .section-header {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+    font-weight: 600;
+    flex: 1;
+}
+
+.section-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.section-control-button {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background-color var(--transition-fast);
+}
+
+.section-control-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .section-control-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.section-content {
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.section.minimized .section-content {
+    display: none;
+}
+
+.section.fullscreen {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    z-index: 30;
+}
+
+/* Section Tags */
+.section-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.tag {
+    padding: 4px 8px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.tag:hover {
+    background-color: var(--theme-color);
+    color: white;
+}
+
+body.dark-mode .tag {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .tag:hover {
+    background-color: var(--theme-color);
+}
