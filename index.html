@@ -103,8 +103,129 @@
         </div>
     </header>
 
-    <!-- More content will be added here -->
-    
+    <main>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-section">
+                <h2>CAFE</h2>
+                <ul>
+                    <li><button data-section="day" class="section-button">by day</button></li>
+                    <li><button data-section="night" class="section-button">by night</button></li>
+                    <li><button data-section="map" class="section-button">map</button></li>
+                    <li><button data-section="menu" class="section-button">menu</button></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>CREATES</h2>
+                <ul>
+                    <li><button data-section="workshops" class="section-button">workshops</button></li>
+                    <li><button data-section="marketplace" class="section-button">market place</button></li>
+                    <li><button data-section="skillshare" class="section-button">skill share</button></li>
+                    <li><button data-section="workroom" class="section-button">our workroom</button></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>CURATES</h2>
+                <ul>
+                    <li><button data-section="exhibitions" class="section-button">exhibitions</button></li>
+                    <li><button data-section="events" class="section-button">events</button></li>
+                    <li><button data-section="fungi" class="section-button">the fungi room</button></li>
+                    <li><button data-section="climate" class="section-button">creative climate collab</button></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>CONNECTS</h2>
+                <ul>
+                    <li><button data-section="zine" class="section-button">zine</button></li>
+                    <li><button data-section="directory" class="section-button">directory</button></li>
+                    <li><button data-section="opportunities" class="section-button">opportunities</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-area" id="contentArea">
+            <!-- Sections will be dynamically added here -->
+        </div>
+        
+        <div class="workspace-controls">
+            <button id="addSectionBtn" class="add-section-btn" aria-label="Add New Section">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M12 5v14M5 12h14"></path>
+                </svg>
+            </button>
+            
+            <div class="section-tabs" id="sectionTabs">
+                <!-- Active section tabs will appear here -->
+            </div>
+        </div>
+    </main>
+
+    <div class="spatial-map-toggle">
+        <button id="toggleSpatialMap" aria-label="Toggle Spatial Map">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <div class="spatial-map" id="spatialMap">
+        <div class="spatial-map-close">×</div>
+        <div class="spatial-map-content">
+            <h2>UNIT3 Interactive Map</h2>
+            <div class="map-container">
+                <div class="map-area">
+                    <!-- Map will be rendered here -->
+                    <svg id="venueMap" width="100%" height="100%" viewBox="0 0 800 500">
+                        <!-- Cafe Area -->
+                        <g class="map-section" data-section="cafe">
+                            <rect x="50" y="50" width="300" height="200" class="map-room" />
+                            <text x="200" y="150" class="map-label">Café Space</text>
+                        </g>
+                        
+                        <!-- Workroom -->
+                        <g class="map-section" data-section="workroom">
+                            <rect x="400" y="50" width="350" height="200" class="map-room" />
+                            <text x="575" y="150" class="map-label">Workroom</text>
+                        </g>
+                        
+                        <!-- Exhibition Space -->
+                        <g class="map-section" data-section="exhibition">
+                            <rect x="50" y="300" width="450" height="150" class="map-room" />
+                            <text x="275" y="375" class="map-label">Exhibition Space</text>
+                        </g>
+                        
+                        <!-- Fungi Room -->
+                        <g class="map-section" data-section="fungi">
+                            <rect x="550" y="300" width="200" height="150" class="map-room" />
+                            <text x="650" y="375" class="map-label">Fungi Room</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color cafe"></span>
+                        <span class="legend-text">Café Space</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color workroom"></span>
+                        <span class="legend-text">Workroom</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color exhibition"></span>
+                        <span class="legend-text">Exhibition</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color fungi"></span>
+                        <span class="legend-text">Fungi Room</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
